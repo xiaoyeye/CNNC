@@ -1,5 +1,5 @@
 # CNNC
-covolutional neural network based coexpression analysis
+A supervised framework for co-expression analysis 
 #Title: Convolutional neural network co-expression analysis (CNNC)
 
 date: 2018-06-03
