@@ -16,6 +16,7 @@ bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.
 #code sources:
 
 #Trained model for:
+
 — mESC TF-target prediction model based on GTRD CHIP-seq database
 
 — KEGG Pathway prediction model
