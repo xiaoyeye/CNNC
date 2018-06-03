@@ -16,16 +16,16 @@ bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.
 #code sources:
 
 #Trained model for:
-— TF-target prediction model for GTRD CHIP-seq database
+— mESC TF-target prediction model for GTRD CHIP-seq database
 
 — KEGG Pathway prediction model
 
 — Reactome Pathway prediction model
 
-https://s3.us-east-2.amazonaws.com/mousebulkexprssion/trained+model.zip
+
 
 #train model for a new task:
-https://s3.us-east-2.amazonaws.com/mousebulkexprssion/to+train+model.zip
+
 — readme
 Using ‘Trained models’, one can predict if one gene pair can interact as TF-target, KEGG pathway edges or Reactome protein interaction pair.
 
