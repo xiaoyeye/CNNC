@@ -35,12 +35,14 @@ Using ‘train new model’,one can define a new predict task.
 
 #Trained model:
 
-#step1, users need to provide gene pair candidate list;
+#step1, users need to provide gene pair candidate list or expression data;
 
 #step2, use get_xy_data_cnn_combine_from_database.py to get gene pair NEPDF list;
+
 Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt, sc_gene_list.txt, gene_pair list, bulk expression data, sc exprsssion data
 
 #step3, use predict_no_y.py to do prediction;
+
 Usage: predict_no_y.py number of genes in position0, kEGG or GTRD or Reactome
 
 (In the models are three trained model for GTRD TF-target, KEGG and Reactome database respectively)
@@ -50,7 +52,9 @@ Usage: predict_no_y.py number of genes in position0, kEGG or GTRD or Reactome
 #step1, users need to provide gene pair candidate list and their labels;
 
 #step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list and their labels;
+
 Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt, sc_gene_list.txt, gene_pair list, bulk expression data, sc exprsssion data
 
 #step3, use train_with_labels.py to train a new model;
+
 Usage: python train_with_labels.py
