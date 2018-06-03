@@ -37,11 +37,13 @@ Using ‘train new model’,one can define a new predict task.
 
 #Trained model:
 
-#step1, users need to provide gene pair candidate list or expression data;
+#step1, users need to provide gene pair candidate list and their expression data (optional);
 
 #step2, use get_xy_data_cnn_combine_from_database.py to get gene pair NEPDF list;
 
 Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt, sc_gene_list.txt, gene_pair list, bulk expression data, sc exprsssion data
+
+Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gene sets. In our own data, scRNA-seq used entrez ID, bulk RNA-seq used ensembl ID, gene pair list used gene symbol ID, thus we used 'bulk_gene_list.txt' and 'sc_gene_list.txt' to convert all the IDs to gene symbols. Please make IDs convert to gene symbol ID files for bulk and scRNA-seq data.
 
 #step3, use predict_no_y.py to do prediction;
 
@@ -51,7 +53,7 @@ Usage: predict_no_y.py number of genes in position0, kEGG or GTRD or Reactome
 
 #Train new model:
 
-#step1, users need to provide gene pair candidate list and their labels;
+#step1, users need to provide gene pair candidate list, their labels and their expression data (optional);
 
 #step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list and their labels;
 
