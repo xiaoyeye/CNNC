@@ -25,7 +25,7 @@ bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.
 
 
 
-# train model for a new task:
+# Train model for a new task:
 
 # — readme
 
