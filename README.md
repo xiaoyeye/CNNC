@@ -65,6 +65,7 @@ Using ‘train new model’,one can define a new predict task.
 #6, sc expression data  it should be a hdf5 format. users can use their own data or data we provided.
 
 #################OUTPUT
+
 #it generate a data_no_label folder, and a series of data files containing Nxdata_tf (NEPDF file)  and zdata_tf (gene symbol pair file) for each data part divided.
 
 Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gene sets. In our own data, scRNA-seq used entrez ID, bulk RNA-seq used ensembl ID, gene pair list used gene symbol ID, thus we used 'bulk_gene_list.txt' and 'sc_gene_list.txt' to convert all the IDs to gene symbols. Please make IDs convert to gene symbol ID files for bulk and scRNA-seq data.
