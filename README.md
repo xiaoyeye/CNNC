@@ -142,3 +142,5 @@ gene pair candidate label list, such as mmukegg_new_new_unique_rand_labelx.txt
 
 #it will generate a folder 'wholeXXXXX', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
 
+# step5, use trained model to do prediction.
+
