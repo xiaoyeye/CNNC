@@ -45,7 +45,7 @@ Using ‘train new model’,one can define a new predict task.
 
 #command line in developer's linux machine :
 
-#python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_no_labelx.txt mmukegg_new_new_unique_rand_no_labelx_num.npy /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 0
+#python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_labelx_sy.txt mmukegg_new_new_unique_rand_labelx_num_sy.txt /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 0
 
 #################INPUT################################################################################################################################
 
@@ -74,13 +74,13 @@ Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gen
 
 # step3, use predict_no_y.py to do prediction;
 
-#Usage: python predict_no_y.py number_of_data_parts_divided path_of_trained model
+#Usage: python predict_no_y.py  number_of_separation NEPDF_pathway number_of_categories  model_pathway
 
 #command line in developer's linux machine :
 
-#python predict_no_y.py  2   /home/yey3/code3/models/model_KEGG2.h5
+#python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/trained_model/models/KEGG_keras_cnn_trained_model_shallow2.h5
 
-(In the models folder are three trained model for GTRD TF-target, KEGG and Reactome database respectively)
+(In the models folder are  trained models for GTRD TF-target, KEGG and Reactome database respectively)
 
 # Train new model:
 
@@ -88,11 +88,11 @@ Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gen
 gene pair candidate label list, such as mmukegg_new_new_unique_rand_labelx.txt
 # step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list and their labels;
 
-#Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation index list  bulk expression data  sc exprsssion data 1
+#Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation index list  bulk expression data  sc exprsssion data 1 (the same to step2 in trained_model)
 
 #command line in developer's linux machine :
 
-#python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_labelx.txt mmukegg_new_new_unique_rand_labelx_num.npy /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 1
+#python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_labelx_sy.txt mmukegg_new_new_unique_rand_labelx_num_sy.txt /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 1
 
 #################INPUT################################################################################################################################
 
@@ -117,21 +117,21 @@ gene pair candidate label list, such as mmukegg_new_new_unique_rand_labelx.txt
 #it generate a data_label folder, and a series of data files containing Nxdata_tf (NEPDF file), ydata_tf (label file) and zdata_tf (gene symbol pair file) for each data part divided.
 
 
-# step3, use train_with_labels_three_fold.py to train a new model with three-fold cross validation;
+# step3, use train_with_labels_three_foldx.py to train a new model with three-fold cross validation;
 
-#Usage  python train_with_labels_wholedata.py number_of_data_parts_divided pathway_of_data
+#Usage  python train_with_labels_three_fold.py number_of_data_parts_divided NEPDF_pathway number_of_categories
 
 #command line in developer's linux machine :
 
 #module load cuda-8.0 using GPU
 
-#srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_wtih_labels_wholedata.py 3057 XXXXXX > results_whole.txt
+#srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_with_labels_three_foldx.py 9 /home/yey3/cnn_project/code3/NEPDF_data 3 > results.txt
 
 #######################OUTPUT
 
-#it will generate a folder 'wholeXXXXX', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
+#it will generate three cross_Validation folder 'YYYYY', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
 
-# step4, use train_with_labels_wholedata.py to train a new model with whole data;
+# step4, use train_with_labels_wholedatax.py to train a new model with whole data;
 
 #Usage  python train_with_labels_wholedata.py number_of_data_parts_divided
 
@@ -139,20 +139,20 @@ gene pair candidate label list, such as mmukegg_new_new_unique_rand_labelx.txt
 
 #module load cuda-8.0 using GPU
 
-#srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_wtih_labels_wholedata.py 3057 > results_whole.txt
+#srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_with_labels_wholedatax.py 9 /home/yey3/cnn_project/code3/NEPDF_data 3 > results_whole.txt
 
 #######################OUTPUT
 
 #it will generate a folder 'wholeXXXXX', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
 
-# step5, use predict_no_y.py to do prediction;
+# step5, use predict_no_y.py to do prediction; (the same to # step3 in trained_model)
 
-#Usage: python predict_no_y.py number_of_data_parts_divided path_of_trained model
+#Usage: python predict_no_y.py  number_of_separation NEPDF_pathway number_of_categories  model_pathway
 
 #command line in developer's linux machine :
 
-#python predict_no_y.py  2   /home/yey3/code3/models/model_KEGG2.h5
+#python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5
 
-(In the models folder are three trained model for GTRD TF-target, KEGG and Reactome database respectively)
+(In the models folder are  trained models for GTRD TF-target, KEGG and Reactome database respectively)
 
 
