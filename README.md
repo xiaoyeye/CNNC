@@ -153,6 +153,6 @@ gene pair candidate label list, such as mmukegg_new_new_unique_rand_labelx.txt
 
 #python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5
 
-(In the models folder are  trained models for GTRD TF-target, KEGG and Reactome database respectively)
+(In the  folder are  newly trained models )
 
 
