@@ -16,7 +16,6 @@ bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.
 #users need to install the latest python and all the modules needed by the code. 
 Developer's environment is python 3.6.3 in a Linux server which is now running Centos 6.5
 as the underlying OS and Rocks 6.1.1 as the cluster management revision. And Developer uses theano as the Keras backend in python.
-# code sources:
 
 # Trained model for:
 
@@ -26,17 +25,12 @@ as the underlying OS and Rocks 6.1.1 as the cluster management revision. And Dev
 
 — Reactome Pathway prediction model
 
+# Train model for a new task.
+
+users can define their own tasks by providing new expression data or new gene pair lables.
 
 
-# Train model for a new task:
-
-# — readme
-
-Using ‘trained models’, one can predict if one gene pair can interact as TF-target, KEGG pathway edges or Reactome protein interaction pair.
-
-Using ‘train new model’,one can define a new predict task.
-
-—- manual
+# code sources:
 
 # Trained model:
 
