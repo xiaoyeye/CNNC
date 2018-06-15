@@ -74,9 +74,9 @@ such as mmukegg_new_new_unique_rand_labelx_num_sy.txt and mmukegg_new_new_unique
 
 #################OUTPUT
 
-#it generate a data_no_label folder, and a series of data files containing Nxdata_tf (NEPDF file)  and zdata_tf (gene symbol pair file) for each data part divided.
+#it generate a NEPDF_data folder, and a series of data files containing Nxdata_tf (NEPDF file)  and zdata_tf (gene symbol pair file) for each data part divided.
 
-Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gene sets. In our own data, scRNA-seq used entrez ID, bulk RNA-seq used ensembl ID, gene pair list used gene symbol ID, thus we used 'bulk_gene_list.txt' and 'sc_gene_list.txt' to convert all the IDs to gene symbols. Please make IDs convert to gene symbol ID files for bulk and scRNA-seq data.
+Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gene sets. In our own data, scRNA-seq used entrez ID, bulk RNA-seq used ensembl ID, gene pair list used gene symbol ID, thus we used 'bulk_gene_list.txt' and 'sc_gene_list.txt' to convert all the IDs to gene symbols. Please also make IDs convert to gene symbol ID files for bulk and scRNA-seq data if users want to use their own expression data.
 
 # step3, use predict_no_y.py to do prediction;
 
@@ -90,12 +90,18 @@ Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gen
 
 # Train new model:
 
-# step1, users need to provide gene pair candidate list, their labels, and  and their expression data (optional);
-gene pair candidate label list, such as mmukegg_new_new_unique_rand_labelx.txt
-gene_pair_list is the list that contains gene pairs and their labels. format : 'GeneA    GeneB     0'
-# step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list and their labels;
+# step1, users need to provide gene pair candidate list (the same to step1 in trained_model);
 
-#Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation index list  bulk expression data  sc exprsssion data 1 (the same to step2 in trained_model)
+gene_pair_list is the list that contains gene pairs and their labels. format : 'GeneA    GeneB     0'
+such as mmukegg_new_new_unique_rand_labelx_sy.txt and mmukegg_new_new_unique_rand_labelx.txt in data file.
+users also need to provide data_separation index_list is a number list that divide gene_pair_list into small parts
+#here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. And we can evaluate CNNC's performance on only a small data part.
+#if users do not need to separate data, they can just generate a index list to divide the data into N equal parts.
+such as mmukegg_new_new_unique_rand_labelx_num_sy.txt and mmukegg_new_new_unique_rand_labelx_num.txt in data file.
+
+# step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list and their labels (the same to step2 in trained_model except flag setting);
+
+#Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation index list  bulk expression data  sc exprsssion data 1 
 
 #command line in developer's linux machine :
 
@@ -121,7 +127,7 @@ gene_pair_list is the list that contains gene pairs and their labels. format : '
 #7， flag, 0 means do not generate label list; 1 means to generate label list.
 #################OUTPUT
 
-#it generate a data_label folder, and a series of data files containing Nxdata_tf (NEPDF file), ydata_tf (label file) and zdata_tf (gene symbol pair file) for each data part divided.
+#it generate a NEPDF_data folder, and a series of data files containing Nxdata_tf (NEPDF file), ydata_tf (label file) and zdata_tf (gene symbol pair file) for each data part divided.
 
 
 # step3, use train_with_labels_three_foldx.py to train a new model with three-fold cross validation;
@@ -140,7 +146,7 @@ gene_pair_list is the list that contains gene pairs and their labels. format : '
 
 # step4, use train_with_labels_wholedatax.py to train a new model with whole data;
 
-#Usage  python train_with_labels_wholedata.py number_of_data_parts_divided
+#Usage  python train_with_labels_wholedata.py number_of_separation NEPDF_data_path num_of_categories
 
 #command line in developer's linux machine :
 
@@ -150,16 +156,14 @@ gene_pair_list is the list that contains gene pairs and their labels. format : '
 
 #######################OUTPUT
 
-#it will generate a folder 'wholeXXXXX', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
+#it will generate a folder 'xwholeXXXXX', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
 
 # step5, use predict_no_y.py to do prediction; (the same to # step3 in trained_model)
 
-#Usage: python predict_no_y.py  number_of_separation NEPDF_pathway number_of_categories  model_pathway
+#Usage: python predict_no_y.py  number_of_separation NEPDF_data_pathway number_of_categories  model_pathway
 
 #command line in developer's linux machine :
 
-#python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5
-
-(it is the newly trained model )
+#python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5(it is the newly trained model )
 
 
