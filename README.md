@@ -39,6 +39,8 @@ Using ‘train new model’,one can define a new predict task.
 
 # step1, users need to provide gene pair candidate list;
 
+gene_pair_list is the list that contains gene pairs and their labels. format : 'GeneA GeneB ' or 'GeneA    GeneB     0'
+
 # step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list;
 
 #Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation_index_list  bulk_expression_data  sc_exprsssion_data 0
@@ -86,6 +88,7 @@ Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gen
 
 # step1, users need to provide gene pair candidate list, their labels, and  and their expression data (optional);
 gene pair candidate label list, such as mmukegg_new_new_unique_rand_labelx.txt
+gene_pair_list is the list that contains gene pairs and their labels. format : 'GeneA    GeneB     0'
 # step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list and their labels;
 
 #Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation index list  bulk expression data  sc exprsssion data 1 (the same to step2 in trained_model)
