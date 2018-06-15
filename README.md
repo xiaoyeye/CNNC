@@ -13,6 +13,8 @@ bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.
 
 # — code
 
+#users also need to install the latest python and all the modules needed by the code. 
+Developer's environment is python 3.6.3. And Developer uses theano as the Keras backend.
 # code sources:
 
 # Trained model for:
