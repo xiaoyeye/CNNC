@@ -30,7 +30,7 @@ as the underlying OS and Rocks 6.1.1 as the cluster management revision. And Dev
 users can define their own tasks by providing new expression data or new gene pair lables.
 
 
-# code sources:
+# code sources and manual:
 
 # Trained model:
 
