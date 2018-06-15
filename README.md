@@ -129,7 +129,7 @@ gene pair candidate label list, such as mmukegg_new_new_unique_rand_labelx.txt
 
 #######################OUTPUT
 
-#it will generate three cross_Validation folder 'YYYYY', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
+#it will generate three cross_Validation folder 'YYYYY', in which 'keras_cnn_trained_model_shallow.h5' is the  trained model
 
 # step4, use train_with_labels_wholedatax.py to train a new model with whole data;
 
