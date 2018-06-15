@@ -40,7 +40,11 @@ Using ‘train new model’,one can define a new predict task.
 # step1, users need to provide gene pair candidate list;
 
 gene_pair_list is the list that contains gene pairs and their labels. format : 'GeneA GeneB ' or 'GeneA    GeneB     0'
-
+such as mmukegg_new_new_unique_rand_labelx_sy.txt and mmukegg_new_new_unique_rand_labelx.txt in data file.
+users also need to provide data_separation index_list is a number list that divide gene_pair_list into small parts
+#here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. And we can evaluate CNNC's performance on only a small data part.
+#if users do not need to separate data, they can just generate a index list to divide the data into N equal parts.
+such as mmukegg_new_new_unique_rand_labelx_num_sy.txt and mmukegg_new_new_unique_rand_labelx_num.txt in data file.
 # step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list;
 
 #Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation_index_list  bulk_expression_data  sc_exprsssion_data 0
