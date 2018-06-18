@@ -7,7 +7,7 @@ date: 2018-06-03
 # tags:
 
 # data sources
-scRNA-seq :https://s3.amazonaws.com/scquery/processed_data/expr_data.hdf5 or https://s3.amazonaws.com/mousescexpression/rank_total_gene_rpkm.h5
+scRNA-seq :https://s3.amazonaws.com/mousescexpression/rank_total_gene_rpkm.h5
 
 bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.h5
 
