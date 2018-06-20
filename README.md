@@ -167,4 +167,4 @@ users also need to provide data_separation index_list which is a number list div
 
 #python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5(it is the newly trained model )
 
-
+Enjoy our CNNC!!
