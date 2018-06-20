@@ -13,7 +13,7 @@ bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.
 
 # code environment
 
-#users need to install the latest python and all the modules needed by the code. 
+#users need to install the latest python and all the modules required by the code. 
 Developer's environment is python 3.6.3 in a Linux server which is now running Centos 6.5
 as the underlying OS and Rocks 6.1.1 as the cluster management revision. And Developer uses theano as the Keras backend in python.
 
@@ -37,11 +37,11 @@ users can define their own tasks by providing new expression data or new gene pa
 # step1, users need to provide gene pair candidate list;
 
 gene_pair_list is the list that contains gene pairs and their labels. format : 'GeneA GeneB ' or 'GeneA    GeneB     0'
-such as mmukegg_new_new_unique_rand_labelx_sy.txt and mmukegg_new_new_unique_rand_labelx.txt in data file.
-users also need to provide data_separation index_list is a number list that divide gene_pair_list into small parts
-#here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. And we can evaluate CNNC's performance on only a small data part.
-#if users do not need to separate data, they can just generate a index list to divide the data into N equal parts.
-such as mmukegg_new_new_unique_rand_labelx_num_sy.txt and mmukegg_new_new_unique_rand_labelx_num.txt in data file.
+such as mmukegg_new_new_unique_rand_labelx_sy.txt and mmukegg_new_new_unique_rand_labelx.txt in data folder.
+users also need to provide data_separation index_list which is a number list dividing gene_pair_list into small parts.
+
+#Here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. We can evaluate CNNC's performance on only a small data part.
+#If users do not want to specified separate data, they can just generate a index list to divide the data into N equal parts.
 # step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list;
 
 #Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation_index_list  bulk_expression_data  sc_exprsssion_data 0
@@ -52,15 +52,16 @@ such as mmukegg_new_new_unique_rand_labelx_num_sy.txt and mmukegg_new_new_unique
 
 #################INPUT################################################################################################################################
 
-#1, bulk_gene_list.txt is the list that convert bulk expression data gene set into gene symbol IDs. format: 'gene symbol IDs\t bulk gene ID'
+#1, bulk_gene_list.txt is the list that converts bulk expression data gene set into gene symbol IDs. Format: 'gene symbol IDs\t bulk gene ID'
 
-#2, sc_gene_list.txt is the list that convert sc expression data gene set into gene symbol IDs. format: 'gene symbol IDs\t sc gene ID'
+#2, sc_gene_list.txt is the list that converts sc expression data gene set into gene symbol IDs. Format: 'gene symbol IDs\t sc gene ID'
 
 #3, gene_pair_list is the list that contains gene pairs and their labels. format : 'GeneA    GeneB   '
 
-#4, data_separation index_list is a number list that divide gene_pair_list into small parts
+#4, data_separation index_list is a number list that divides gene_pair_list into small parts
 
-#here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. And we can evaluate CNNC's performance on only a small data part.
+#Here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. And we can evaluate CNNC's performance on only a small data part.
+
 #if users do not need to separate data, they can just generate a index list to divide the data into N equal parts.
 
 #5, bulk_expression_data  it should be a hdf5 format. users can use their own data or data we provided.
@@ -71,7 +72,7 @@ such as mmukegg_new_new_unique_rand_labelx_num_sy.txt and mmukegg_new_new_unique
 
 #################OUTPUT
 
-#it generate a NEPDF_data folder, and a series of data files containing Nxdata_tf (NEPDF file)  and zdata_tf (gene symbol pair file) for each data part divided.
+#It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf (NEPDF file)  and zdata_tf (gene symbol pair file) for each data part divided.
 
 Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gene sets. In our own data, scRNA-seq used entrez ID, bulk RNA-seq used ensembl ID, gene pair list used gene symbol ID, thus we used 'bulk_gene_list.txt' and 'sc_gene_list.txt' to convert all the IDs to gene symbols. Please also make IDs convert to gene symbol ID files for bulk and scRNA-seq data if users want to use their own expression data.
 
