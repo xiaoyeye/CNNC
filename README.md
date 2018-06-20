@@ -88,14 +88,16 @@ Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gen
 
 # Train new model:
 
-# step1, users need to provide gene pair candidate list (the same to step1 in trained_model);
+# step1, users need to provide gene pair candidate list (the same to step1 in trained_model except the flag setting);
 
 gene_pair_list is the list that contains gene pairs and their labels. format : 'GeneA    GeneB     0'
-such as mmukegg_new_new_unique_rand_labelx_sy.txt and mmukegg_new_new_unique_rand_labelx.txt in data file.
-users also need to provide data_separation index_list is a number list that divide gene_pair_list into small parts
-#here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. And we can evaluate CNNC's performance on only a small data part.
+such as mmukegg_new_new_unique_rand_labelx_sy.txt and mmukegg_new_new_unique_rand_labelx.txt in data folder.
+users also need to provide data_separation index_list which is a number list dividing gene_pair_list into small parts
+
+#Here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. And we can evaluate CNNC's performance on only a small data part.
+
 #if users do not need to separate data, they can just generate a index list to divide the data into N equal parts.
-such as mmukegg_new_new_unique_rand_labelx_num_sy.txt and mmukegg_new_new_unique_rand_labelx_num.txt in data file.
+
 
 # step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list and their labels (the same to step2 in trained_model except flag setting);
 
@@ -107,16 +109,17 @@ such as mmukegg_new_new_unique_rand_labelx_num_sy.txt and mmukegg_new_new_unique
 
 #################INPUT################################################################################################################################
 
-#1, bulk_gene_list.txt is the list that convert bulk expression data gene set into gene symbol IDs. format: 'gene symbol IDs\t bulk gene ID'
+#1, bulk_gene_list.txt is the list that converts bulk expression data gene set into gene symbol IDs. Format: 'gene symbol IDs\t bulk gene ID'
 
-#2, sc_gene_list.txt is the list that convert sc expression data gene set into gene symbol IDs. format: 'gene symbol IDs\t sc gene ID'
+#2, sc_gene_list.txt is the list that converts sc expression data gene set into gene symbol IDs. Format: 'gene symbol IDs\t sc gene ID'
 
 #3, gene_pair_list is the list that contains gene pairs and their labels. format : 'GeneA    GeneB     0'
 
 #4, data_separation_index_list is a number list that divide gene_pair_list into small parts
 
-#here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. And we can evaluate CNNC's performance on only a small data part.
-#if users do not need to separate data, they can just generate a index list to divide the data into N equal parts.
+#Here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. And we can evaluate CNNC's performance on only a small data part.
+
+#if users do not want to separate data, they can just generate a index list to divide the data into N equal parts.
 
 #5, bulk_expression_data  it should be a hdf5 format. users can use their own data or data we provided.
 
@@ -130,17 +133,17 @@ such as mmukegg_new_new_unique_rand_labelx_num_sy.txt and mmukegg_new_new_unique
 
 # step3, use train_with_labels_three_foldx.py to train a new model with three-fold cross validation;
 
-#Usage  python train_with_labels_three_fold.py number_of_data_parts_divided NEPDF_pathway number_of_categories
+#Usage  python train_with_labels_three_foldx.py number_of_data_parts_divided NEPDF_pathway number_of_categories
 
 #command line in developer's linux machine :
 
-#module load cuda-8.0 using GPU
+#module load cuda-8.0 (it is to use GPU)
 
 #srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_with_labels_three_foldx.py 9 /home/yey3/cnn_project/code3/NEPDF_data 3 > results.txt
 
 #######################OUTPUT
 
-#it will generate three cross_Validation folder 'YYYYY', in which 'keras_cnn_trained_model_shallow.h5' is the  trained model
+#it will generate three cross_Validation folder whose name begins with 'YYYYY', in which 'keras_cnn_trained_model_shallow.h5' is the  trained model
 
 # step4, use train_with_labels_wholedatax.py to train a new model with whole data;
 
@@ -154,7 +157,7 @@ such as mmukegg_new_new_unique_rand_labelx_num_sy.txt and mmukegg_new_new_unique
 
 #######################OUTPUT
 
-#it will generate a folder 'xwholeXXXXX', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
+#it will generate a folder whose name begins with 'xwhole', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
 
 # step5, use predict_no_y.py to do prediction; (the same to # step3 in trained_model)
 
