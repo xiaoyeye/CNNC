@@ -16,7 +16,7 @@ bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.
 #users need to install the latest python and all the modules required by the code. 
 Developer's environment is python 3.6.3 in a Linux server which is now running Centos 6.5
 as the underlying OS and Rocks 6.1.1 as the cluster management revision. And Developer uses theano as the Keras backend in python.
-GPU is GeForce GTX 1080. We strongly recommend GPU 
+GPU is GeForce GTX 1080. We strongly recommend GPU acceleration and conda management for package, dependency and environment.
 
 # Trained model for:
 
