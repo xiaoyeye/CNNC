@@ -18,11 +18,11 @@ bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.
 Developer's environment is python 3.6.3 in a Linux server which is now running Centos 6.5
 as the underlying OS and Rocks 6.1.1 as the cluster management revision. 
 
-And Developer uses theano as the Keras backend in python.
+And Developer uses theano as the Keras backend in python. 
 
-Developer's GPU is GeForce GTX 1080. 
+Developer's GPU is GeForce GTX 1080. If the latest theano does not work, please try some older versions.
 
-Although not necessary, we strongly recommend GPU acceleration and conda management for package, dependency and environment. With conda, the total software, package module installation time in Python should be less than one hour.
+Although not necessary, we strongly recommend GPU acceleration and conda management for package, dependency and environment to save time. With conda, the total software, package module installation time in Python should be less than one hour.
 
 # Trained model for:
 
