@@ -22,7 +22,7 @@ And Developer uses theano as the Keras backend in python.
 
 Developer's GPU is GeForce GTX 1080. 
 
-Although not necessary, we strongly recommend GPU acceleration and conda management for package, dependency and environment.
+Although not necessary, we strongly recommend GPU acceleration and conda management for package, dependency and environment. With conda, the total installation time should be less than one hour.
 
 # Trained model for:
 
