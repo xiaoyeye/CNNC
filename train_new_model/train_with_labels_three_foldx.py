@@ -24,7 +24,7 @@ data_augmentation = False
 # num_predictions = 20
 batch_size = 1024 # mini batch for training
 #num_classes = 3   #### categories of labels
-epochs = 200      #### iterations of trainning, with GPU 1080, each epoch takes about 60s
+epochs = 20     #### iterations of trainning, with GPU 1080, 200 for KEGG and Reactome, 20 for GTRD
 #length_TF =3057  # number of divide data parts
 # num_predictions = 20
 model_name = 'keras_cnn_trained_model_shallow.h5'
@@ -59,14 +59,21 @@ length_TF =int(sys.argv[1]) # number of data parts divided
 data_path = sys.argv[2]
 num_classes = int(sys.argv[3])
 whole_data_TF = [i for i in range(length_TF)]
-for test_indel in range(1,4): ################## three fold cross validation
-    test_TF = [i for i in range (int(np.ceil((test_indel-1)*0.333*length_TF)),int(np.ceil(test_indel*0.333*length_TF)))]
-    train_TF = [i for i in whole_data_TF if i not in test_TF]
+###################################################################################################################################
+#for test_indel in range(1,4): ################## three fold cross validation    ## for KEGG and Reactiome 3 fold CV              #for KEGG and Reactiome 3 fold CV
+#    test_TF = [i for i in range (int(np.ceil((test_indel-1)*0.333*length_TF)),int(np.ceil(test_indel*0.333*length_TF)))]         #
+#    train_TF = [i for i in whole_data_TF if i not in test_TF]                                                                    #
+###################################################################################################################################
+#####################################################################
+for test_indel in range (length_TF):                                      #  for GTRD leave-one-TF-out CV
+    test_TF = [test_indel]                                          #
+    train_TF = [i for i in whole_data_TF if i not in test_TF]       #
+#####################################################################
     (x_train, y_train,count_set_train) = load_data_TF2(train_TF,data_path)
     (x_test, y_test,count_set) = load_data_TF2(test_TF,data_path)
     print(x_train.shape, 'x_train samples')
     print(x_test.shape, 'x_test samples')
-    save_dir = os.path.join(os.getcwd(),str(test_indel)+'YYYY_saved_models_T_32-32-64-64-128-128-512_e'+str(epochs))
+    save_dir = os.path.join(os.getcwd(),str(test_indel)+'YYYY_saved_models_T_32-32-64-64-128-128-512_e'+str(epochs)) ## the result folder 
     if num_classes >2:
         y_train = keras.utils.to_categorical(y_train, num_classes)
         y_test = keras.utils.to_categorical(y_test, num_classes)
