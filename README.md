@@ -26,7 +26,6 @@ Although not necessary, we strongly recommend GPU acceleration and conda managem
 
 # Trained model for:
 
-— mESC TF-target prediction model based on GTRD CHIP-seq database
 
 — KEGG Pathway prediction model
 
@@ -91,7 +90,7 @@ Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gen
 
 #python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/trained_model/models/KEGG_keras_cnn_trained_model_shallow2.h5
 
-(In the models folder are  trained models for GTRD TF-target, KEGG and Reactome database respectively)
+(In the models folder are  trained models for  KEGG and Reactome database respectively)
 
 # Train new model:
 
@@ -175,7 +174,7 @@ users also need to provide data_separation index_list which is a number list div
 #python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5(it is the newly trained model )
 
 ## Attentions:
-### All the demos are based on KEGG and Reactome database. If users want to reproduce the GTRD results, please change the paramter settings in training: change three-fold to leave-one-TF-out CV, and #epoch from 200 to a samll number, say 5, 10, 15, or 20. 
+### All the demos are based on KEGG and Reactome database. 
 ### When label list is very large, say more than 100,000 gene pairs, we recommend users to feed a series of small  number_of_data_parts_divided to run the NEPDF generation in parallel.
 ## to be continued...
 Enjoy our CNNC!!
