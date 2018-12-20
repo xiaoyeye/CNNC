@@ -15,8 +15,6 @@ scRNA-seq :https://s3.amazonaws.com/mousescexpression/rank_total_gene_rpkm.h5
 
 mESC scRNA-seq : https://s3.amazonaws.com/mousescexpression/embryonic_stem_cell.h5
 
-Along with the scRNA is an experiment description, with which users can extract specific cell type data of interest.
-
 bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.h5
 
 # code environment
