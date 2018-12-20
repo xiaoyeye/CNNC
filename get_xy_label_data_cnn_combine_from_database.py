@@ -127,8 +127,8 @@ for i in range(len(gene_pair_index)-1):   #### many sperations
             H_bulk= H_T_bulk[0].T
             HT_bulk = (log10(H_bulk / 43261 + 10 ** -4) + 4)/4
         if not sys.argv[2] == 'None':
-            x_tf = log10(rpkm[int(h_gene_list[x_gene_name])][0:43261] + 10 ** -2)
-            x_gene = log10(rpkm[int(h_gene_list[y_gene_name])][0:43261] + 10 ** -2)
+            x_tf = log10(rpkm[int(h_gene_list[x_gene_name])][0:43261] + 10 ** -2) # for TF target prediction, remove "[0:43261]"
+            x_gene = log10(rpkm[int(h_gene_list[y_gene_name])][0:43261] + 10 ** -2)# for TF target prediction, remove "[0:43261]"
             H_T = histogram2d(x_tf, x_gene, bins=32)
             H = H_T[0].T
             HT = (log10(H / 43261 + 10 ** -4) + 4) / 4
