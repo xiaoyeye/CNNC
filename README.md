@@ -7,7 +7,7 @@ date: 2018-06-03
 # tags:
 
 # pipelines:
-![] (https://raw.githubusercontent.com/xiaoyeye/CNNC/master/pipeline.bmp)
+![](https://raw.githubusercontent.com/xiaoyeye/CNNC/master/pipeline.bmp)
 
 # data sources
 scRNA-seq :https://s3.amazonaws.com/mousescexpression/rank_total_gene_rpkm.h5
