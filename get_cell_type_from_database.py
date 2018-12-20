@@ -41,6 +41,6 @@ cell_type_list = ['bone marrow cell','dendritic cell','embryonic stem cell'] ###
 cell_type_listx = ['bone_marrow_cell','dendritic_cell','embryonic_stem_cell']
 for i in range(len(cell_type_list)):
     store = pd.HDFStore('/home/yey3/nn_project2/data/mesc_cnnc/'+cell_type_listx[i]+'.h5')
-    store['RPKMs'] = x.iloc[h_cell_type[cell_type_list[i]],0:43261]
+    store['RPKMs'] = x.iloc[h_cell_type[cell_type_list[i]],:]
     store.close()
 
