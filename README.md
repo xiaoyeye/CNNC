@@ -12,7 +12,7 @@ date: 2018-06-03
 (a) Pipeline for TF-target, KEGG and Reactome edge predictions. Users only need to provide gene-pair candidate list. TF-tatget prediction is cell type specific. Here we provide the model for mESC TF prediction. Please use mESC expression data to generate mESC subset  and then do following NEPDF generation and classification of training and test. (b) Pipeline for a new task with the expression data we collected. Users need to provide gene-pair candidate list to generate NEPDF list and label list to train and test model. (c) Pipeline for a new task with the expression data users collect. Users need to provide gene-pair candidate list, their own expression data to generate NEPDF list, and label list to train and test model. 
 # data sources
 scRNA-seq :https://s3.amazonaws.com/mousescexpression/rank_total_gene_rpkm.h5
-
+mESC scRNA-seq : https://s3.amazonaws.com/mousescexpression/embryonic_stem_cell.h5
 Along with the scRNA is an experiment description, with which users can extract specific cell type data of interest.
 
 bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.h5
