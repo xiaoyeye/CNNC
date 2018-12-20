@@ -12,7 +12,9 @@ date: 2018-06-03
 (a) Pipeline for TF-target, KEGG and Reactome edge predictions. Users only need to provide gene-pair candidate list. (b) Pipeline for a new task with the expression data we collected. Users need to provide gene-pair candidate list to generate NEPDF list and label list to train and test model. (c) Pipeline for a new task with the expression data users collect. Users need to provide gene-pair candidate list, their own expression data to generate NEPDF list, and label list to train and test model. 
 # data sources
 scRNA-seq :https://s3.amazonaws.com/mousescexpression/rank_total_gene_rpkm.h5
+
 Along with the scRNA is an experiment description, with which users can extract specific cell type data of interest.
+
 bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.h5
 
 # code environment
