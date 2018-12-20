@@ -169,7 +169,7 @@ for test_indel in range (length_TF):                                      #  for
     plt.grid()
     plt.savefig(save_dir+'/end_result.pdf')
     ###############################################################  evaluation without consideration of data separation
-    if num_classes == 3:
+    if num_classes == 3:  ## here we only focus on three category tasks
         plt.figure(figsize=(10, 6))
         for i in range(3):
             y_test_x = [j[i] for j in y_test]
