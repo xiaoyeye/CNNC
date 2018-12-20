@@ -1,6 +1,6 @@
 # CNNC
-A supervised framework for co-expression analysis 
-# Title: Convolutional neural network co-expression analysis (CNNC)
+# Title: Deep learning for inferring gene relationships from single-cell expression data
+Convolutional neural network co-expression analysis (CNNC)
 
 date: 2018-06-03
 
