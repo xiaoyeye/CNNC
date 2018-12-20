@@ -37,6 +37,8 @@ Although not necessary, we strongly recommend GPU acceleration and conda managem
 
 — Reactome Pathway prediction model
 
+— GTRD mESC TF prediction model
+
 # Train model for a new task.
 
 users can define their own tasks by providing new expression data or new gene pair lables.
