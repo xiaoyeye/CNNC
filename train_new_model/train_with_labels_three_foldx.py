@@ -1,5 +1,5 @@
 from __future__ import print_function
-# Usage  python train_with_labels_three_fold.py number_of_data_parts_divided NEPDF_pathway number of category
+# Usage  python train_with_labels_three_fold.py number_of_data_parts_divided NEPDF_pathway number_of_category
 # command line in developer's linux machine :
 # module load cuda-8.0 using GPU
 #srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_with_labels_three_foldx.py 9 /home/yey3/cnn_project/code3/NEPDF_data 3 > results.txt
