@@ -7,6 +7,7 @@ date: 2018-06-03
 # tags:
 
 # pipelines:
+![](https://raw.githubusercontent.com/xiaoyeye/CNNC/master/New%20Bitmap%20Image.bmp)
 ![](https://raw.githubusercontent.com/xiaoyeye/CNNC/master/pipeline.bmp)
 
 (a) Pipeline for TF-target, KEGG and Reactome edge predictions. Users only need to provide gene-pair candidate list. TF-tatget prediction is cell type specific. Here we provide the model for mESC TF prediction. Please use mESC expression data to generate mESC subset  and then do following NEPDF generation and classification of training and test, and use the big scRNA-seq and bulk data to do pathway tasks. (b) Pipeline for a new task with the expression data we collected. Users need to provide gene-pair candidate list to generate NEPDF list and label list to train and test model. (c) Pipeline for a new task with the expression data users collect. Users need to provide gene-pair candidate list, their own expression data to generate NEPDF list, and label list to train and test model. 
