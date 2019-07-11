@@ -53,7 +53,7 @@ Although not necessary, we strongly recommend GPU acceleration and conda managem
 ## 5.3 GTRD mESC TF prediction model
 
 # 6, Train model for a new task
-(see folder for details)
+
 ## Users can define their own tasks by providing new expression data and (or) new gene pair lables.
 
 
