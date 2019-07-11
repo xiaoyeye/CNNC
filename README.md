@@ -6,7 +6,7 @@ date: 2018-06-03
 
 # tags:
 
-# CNNC:
+# CNNC
 ![](https://raw.githubusercontent.com/xiaoyeye/CNNC/master/New%20Bitmap%20Image.bmp)
 
 CNNC aims to infer gene-gene relationships using single cell expression data. For
@@ -19,7 +19,7 @@ example, for causality inference the output layer contains three probability nod
 where p0 represents the probability that genes a and b are not interacting, p1
 encodes the case that gene a regulates gene b, and p2 is the probability that gene b
 regulates gene a.
-# pipelines:
+# Pipelines
 ![](https://raw.githubusercontent.com/xiaoyeye/CNNC/master/pipeline.bmp)
 
 (a) Pipeline for TF-target, KEGG and Reactome edge predictions. Users only need to provide gene-pair candidate list. TF-tatget prediction is cell type specific. Here we provide the model for mESC TF prediction. Please use mESC expression data to generate mESC subset  and then do following NEPDF generation and classification of training and test, and use the big scRNA-seq and bulk data to do pathway tasks. (b) Pipeline for a new task with the expression data we collected. Users need to provide gene-pair candidate list to generate NEPDF list and label list to train and test model. (c) Pipeline for a new task with the expression data users collect. Users need to provide gene-pair candidate list, their own expression data to generate NEPDF list, and label list to train and test model. 
@@ -30,7 +30,7 @@ mESC scRNA-seq : https://s3.amazonaws.com/mousescexpression/embryonic_stem_cell.
 
 bulk RNA-seq : https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.h5
 
-# code environment
+# Code environment
 
 #Users need to install the latest python and all the modules required by the code.  
 
@@ -43,8 +43,7 @@ Developer's GPU is GeForce GTX 1080. If the latest theano does not work, please 
 
 Although not necessary, we strongly recommend GPU acceleration and conda management for package, dependency and environment to save time. With conda, the total software, package module installation time in Python should be less than one hour.
 
-# Trained model for:
-
+# Trained model for
 
 — KEGG Pathway prediction model
 
@@ -52,14 +51,14 @@ Although not necessary, we strongly recommend GPU acceleration and conda managem
 
 — GTRD mESC TF prediction model
 
-# Train model for a new task.
+# Train model for a new task
 
 users can define their own tasks by providing new expression data or new gene pair lables.
 
 
-# code sources and manual:
+# code command lines
 
-# Trained model:
+# Trained model
 
 # step1, users need to provide gene pair candidate list;
 
