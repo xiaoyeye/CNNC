@@ -8,6 +8,7 @@ date: 2018-06-03
 
 # CNNC:
 ![](https://raw.githubusercontent.com/xiaoyeye/CNNC/master/New%20Bitmap%20Image.bmp)
+
 CNNC aims to infer gene-gene relationships using single cell expression data. For
 each gene pair, sc RNA-Seq expression levels are transformed into 32×32 normalized
 empirical probability function (NEPDF) matrices. The NEPDF serves as an input to a
