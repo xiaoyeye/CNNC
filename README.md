@@ -52,7 +52,7 @@ Although not necessary, we strongly recommend GPU acceleration and conda managem
 
 # 6, Train model for a new task
 
-## Users can define their own tasks by providing new expression data and (or) new gene pair lables.
+## Users can define their own tasks by providing new expression data and (or) new gene pair labels.
 
 
 
