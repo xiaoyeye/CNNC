@@ -66,7 +66,7 @@ users also need to provide data_separation index_list which is a number list div
 
 Here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. We can evaluate CNNC's performance on only a small data part.
 If users do not want to specified separate data, they can just generate a index list to divide the data into N equal parts.
-## 7.2 step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list;
+## 7.2 step2, use 'get_xy_label_data_cnn_combine_from_database.py' to get gene pair NEPDF list;
 
 ### Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation_index_list  bulk_expression_data  sc_exprsssion_data 0
 
@@ -100,7 +100,7 @@ It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf
 
 Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gene sets. In our own data, scRNA-seq used entrez ID, bulk RNA-seq used ensembl ID, gene pair list used gene symbol ID, thus we used 'bulk_gene_list.txt' and 'sc_gene_list.txt' to convert all the IDs to gene symbols. Please also make IDs convert to gene symbol ID files for bulk and scRNA-seq data if users want to use their own expression data.
 
-## 7.3 step3, use predict_no_y.py to do prediction;
+## 7.3 step3, use 'predict_no_y.py' to do prediction;
 
 ### Usage: python predict_no_y.py  number_of_separation NEPDF_pathway number_of_categories  model_pathway
 
@@ -123,7 +123,7 @@ Here we use data separation index list to divide gene pairs into small data part
 If users do not need to separate data, they can just generate a index list to divide the data into N equal parts.
 
 
-## 8.2 step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list and their labels (the same to step2 in trained_model except flag setting);
+## 8.2 step2, use 'get_xy_label_data_cnn_combine_from_database.py' to get gene pair NEPDF list and their labels (the same to step2 in trained_model except flag setting);
 
 ### Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation index list  bulk expression data  sc exprsssion data 1 
 
@@ -155,7 +155,7 @@ If users do not need to separate data, they can just generate a index list to di
 It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf (NEPDF file), ydata_tf (label file) and zdata_tf (gene symbol pair file) for each data part divided.
 
 
-## 8.3 step3, use train_with_labels_three_foldx.py to train a new model with three-fold cross validation;
+## 8.3 step3, use 'train_with_labels_three_foldx.py' to train a new model with three-fold cross validation;
 
 ### Usage  python train_with_labels_three_foldx.py number_of_data_parts_divided NEPDF_pathway number_of_categories
 
@@ -169,7 +169,7 @@ It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf
 
 It will generate three cross_Validation folder whose name begins with 'YYYYY', in which 'keras_cnn_trained_model_shallow.h5' is the  trained model
 
-## 8.4 step4, use train_with_labels_wholedatax.py to train a new model with whole data;
+## 8.4 step4, use 'train_with_labels_wholedatax.py' to train a new model with whole data;
 
 ### Usage  python train_with_labels_wholedata.py number_of_separation NEPDF_data_path num_of_categories
 
@@ -183,7 +183,7 @@ It will generate three cross_Validation folder whose name begins with 'YYYYY', i
 
 It will generate a folder whose name begins with 'xwhole', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
 
-## 8.5 step5, use predict_no_y.py to do prediction; (the same to # step3 in trained_model)
+## 8.5 step5, use 'predict_no_y.py' to do prediction; (the same to # step3 in trained_model)
 
 ### Usage: python predict_no_y.py  number_of_separation NEPDF_data_pathway number_of_categories  model_pathway
 
