@@ -8,6 +8,16 @@ date: 2018-06-03
 
 # CNNC:
 ![](https://raw.githubusercontent.com/xiaoyeye/CNNC/master/New%20Bitmap%20Image.bmp)
+CNNC aims to infer gene-gene relationships using single cell expression data. For
+each gene pair, sc RNA-Seq expression levels are transformed into 32×32 normalized
+empirical probability function (NEPDF) matrices. The NEPDF serves as an input to a
+convolutional neural network (CNN). The intermediate layer of the CNN can be further
+concatenated with input vectors representing Dnase-seq and PWM data. The output
+layer can either have a single, three or more values, depending on the application. For
+example, for causality inference the output layer contains three probability nodes
+where p0 represents the probability that genes a and b are not interacting, p1
+encodes the case that gene a regulates gene b, and p2 is the probability that gene b
+regulates gene a.
 # pipelines:
 ![](https://raw.githubusercontent.com/xiaoyeye/CNNC/master/pipeline.bmp)
 
