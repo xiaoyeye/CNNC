@@ -35,12 +35,12 @@ regulates gene a.
 
 ## Users need to install the latest python and all the modules required by the code.  
 
-Developer's environment is python 3.6.3 in a Linux server which is now running Centos 6.5
+Author's environment is python 3.6.3 in a Linux server which is now running Centos 6.5
 as the underlying OS and Rocks 6.1.1 as the cluster management revision. 
 
-And Developer uses theano as the Keras backend in python. 
+And Author uses theano as the Keras backend in python. 
 
-Developer's GPU is GeForce GTX 1080. If the latest theano does not work, please try some older versions.
+Author's GPU is GeForce GTX 1080. If the latest theano does not work, please try some older versions.
 
 Although not necessary, we strongly recommend GPU acceleration and conda management for package, dependency and environment to save time. With conda, the total software, package module installation time in Python should be less than one hour.
 
@@ -72,7 +72,7 @@ If users do not want to specified separate data, they can just generate a index 
 
 ### Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation_index_list  bulk_expression_data  sc_exprsssion_data 0
 
-### command line in developer's linux machine :
+### command line in author's linux machine :
 
 ### python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_labelx_sy.txt mmukegg_new_new_unique_rand_labelx_num_sy.txt /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 0
 
@@ -106,7 +106,7 @@ Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gen
 
 ### Usage: python predict_no_y.py  number_of_separation NEPDF_pathway number_of_categories  model_pathway
 
-### command line in developer's linux machine :
+### command line in author's linux machine :
 
 ### python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/trained_model/models/KEGG_keras_cnn_trained_model_shallow2.h5
 
@@ -129,7 +129,7 @@ If users do not need to separate data, they can just generate a index list to di
 
 ### Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation index list  bulk expression data  sc exprsssion data 1 
 
-### command line in developer's linux machine :
+### command line in author's linux machine :
 
 ### python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_labelx_sy.txt mmukegg_new_new_unique_rand_labelx_num_sy.txt /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 1
 
@@ -161,7 +161,7 @@ It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf
 
 ### Usage  python train_with_labels_three_foldx.py number_of_data_parts_divided NEPDF_pathway number_of_categories
 
-### command line in developer's linux machine :
+### command line in author's linux machine :
 
 ### module load cuda-8.0 (it is to use GPU)
 
@@ -175,7 +175,7 @@ It will generate three cross_Validation folder whose name begins with 'YYYYY', i
 
 ### Usage  python train_with_labels_wholedata.py number_of_separation NEPDF_data_path num_of_categories
 
-### command line in developer's linux machine :
+### command line in author's linux machine :
 
 ### module load cuda-8.0 using GPU
 
@@ -189,7 +189,7 @@ It will generate a folder whose name begins with 'xwhole', in which 'keras_cnn_t
 
 ### Usage: python predict_no_y.py  number_of_separation NEPDF_data_pathway number_of_categories  model_pathway
 
-### command line in developer's linux machine :
+### command line in author's linux machine :
 
 ### python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5(it is the newly trained model )
 
