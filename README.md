@@ -1,6 +1,6 @@
 # CNNC
 # Title: Deep learning for inferring gene relationships from single-cell expression data
-    Originally, CNNC is short for Convolutional neural network co-expression analysis. Co-expression is just one of the tasks CNNC can      do,   but the name (CNNC) derived from it looks very nice.
+Originally, CNNC is short for Convolutional neural network co-expression analysis. Co-expression is just one of the tasks CNNC can      do,   but the name (CNNC) derived from it looks very nice.
 
 ## date: 2019-07-07
 
@@ -66,7 +66,7 @@ users also need to provide data_separation index_list which is a number list div
 
 Here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. We can evaluate CNNC's performance on only a small data part.
 If users do not want to specified separate data, they can just generate a index list to divide the data into N equal parts.
-## 7.2 step2, use 'get_xy_label_data_cnn_combine_from_database.py' to get gene pair NEPDF list;
+## 7.2 step2, use `get_xy_label_data_cnn_combine_from_database.py` to get gene pair NEPDF list;
 
 ### Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation_index_list  bulk_expression_data  sc_exprsssion_data 0
 
