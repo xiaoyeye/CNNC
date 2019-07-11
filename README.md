@@ -62,19 +62,19 @@ Users can define their own tasks by providing new expression data and (or) new g
 
 ### step1, users need to provide gene pair candidate list;
 
-  gene_pair_list is the list that contains gene pairs and their labels. format : 'GeneA GeneB ' or 'GeneA    GeneB     0'
-  such as mmukegg_new_new_unique_rand_labelx_sy.txt and mmukegg_new_new_unique_rand_labelx.txt in data folder.
-  users also need to provide data_separation index_list which is a number list dividing gene_pair_list into small parts.
+gene_pair_list is the list that contains gene pairs and their labels. format : 'GeneA GeneB ' or 'GeneA    GeneB     0'
+such as mmukegg_new_new_unique_rand_labelx_sy.txt and mmukegg_new_new_unique_rand_labelx.txt in data folder.
+users also need to provide data_separation index_list which is a number list dividing gene_pair_list into small parts.
 
-  #### Here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. We can evaluate CNNC's performance on only a small data part.
-  #### If users do not want to specified separate data, they can just generate a index list to divide the data into N equal parts.
+Here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. We can evaluate CNNC's performance on only a small data part.
+If users do not want to specified separate data, they can just generate a index list to divide the data into N equal parts.
 ### step2, use get_xy_label_data_cnn_combine_from_database.py to get gene pair NEPDF list;
 
-#Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation_index_list  bulk_expression_data  sc_exprsssion_data 0
+#### Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation_index_list  bulk_expression_data  sc_exprsssion_data 0
 
-#command line in developer's linux machine :
+#### command line in developer's linux machine :
 
-#python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_labelx_sy.txt mmukegg_new_new_unique_rand_labelx_num_sy.txt /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 0
+#### python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_labelx_sy.txt mmukegg_new_new_unique_rand_labelx_num_sy.txt /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 0
 
 #################INPUT################################################################################################################################
 
