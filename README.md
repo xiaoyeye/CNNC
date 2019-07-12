@@ -103,19 +103,19 @@ It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf
 
 Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gene sets. In our own data, scRNA-seq used entrez ID, bulk RNA-seq used ensembl ID, gene pair list used gene symbol ID, thus we used 'bulk_gene_list.txt' and 'sc_gene_list.txt' to convert all the IDs to gene symbols. Please also make IDs convert to gene symbol ID files for bulk and scRNA-seq data if users want to use their own expression data.
 
-## 7.3 step3, use `predict_no_y.py` to do prediction;
+>>## 7.3 step3, use `predict_no_y.py` to do prediction;
 
-### Usage: python predict_no_y.py  number_of_separation NEPDF_pathway number_of_categories  model_pathway
+>>>### Usage: python predict_no_y.py  number_of_separation NEPDF_pathway number_of_categories  model_pathway
 
-### command line in author's linux machine :
+>>>### command line in author's linux machine :
 
     python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/trained_model/models/KEGG_keras_cnn_trained_model_shallow2.h5
 
 (In the models folder are  trained models for  KEGG and Reactome database respectively)
 
-# 8, Command lines for Train new model:
+># 8, Command lines for Train new model:
 
-## 8.1 step1, users need to provide gene pair candidate list (the same to step1 in trained_model except the flag setting);
+>>## 8.1 step1, users need to provide gene pair candidate list (the same to step1 in trained_model except the flag setting);
 
 `gene_pair_list is` the list that contains gene pairs and their labels. format : `'GeneA    GeneB     0'`
 such as `mmukegg_new_new_unique_rand_labelx_sy.txt` and `mmukegg_new_new_unique_rand_labelx.txt` in data folder.
@@ -126,43 +126,43 @@ Here we use `data separation index list` to divide gene pairs into small data pa
 If users do not need to separate data, they can just generate a index list to divide the data into N equal parts.
 
 
-## 8.2 step2, use `get_xy_label_data_cnn_combine_from_database.py` to get gene pair NEPDF list and their labels (the same to step2 in trained_model except flag setting);
+>>## 8.2 step2, use `get_xy_label_data_cnn_combine_from_database.py` to get gene pair NEPDF list and their labels (the same to step2 in trained_model except flag setting);
 
-### Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation index list  bulk expression data  sc exprsssion data 1 
+>>>### Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation index list  bulk expression data  sc exprsssion data 1 
 
-### command line in author's linux machine :
+>>>### command line in author's linux machine :
 
     python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_labelx_sy.txt mmukegg_new_new_unique_rand_labelx_num_sy.txt /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 1
 
 #################INPUT################################################################################################################################
 
-#1, `bulk_gene_list.txt` is the list that converts bulk expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t bulk gene ID'`
+>>>#1, `bulk_gene_list.txt` is the list that converts bulk expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t bulk gene ID'`
 
-#2, `sc_gene_list.txt` is the list that converts sc expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t sc gene ID'`
+>>>#2, `sc_gene_list.txt` is the list that converts sc expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t sc gene ID'`
 
-#3, `gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA    GeneB     0'`
+>>>#3, `gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA    GeneB     0'`
 
-#4, `data_separation_index_list` is a number list that divide gene_pair_list into small parts
+>>>#4, `data_separation_index_list` is a number list that divide gene_pair_list into small parts
 
 #Here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. And we can evaluate CNNC's performance on only a small data part.
 
 #if users do not want to separate data, they can just generate a index list to divide the data into N equal parts.
 
-#5,` bulk_expression_data`  it should be a hdf5 format. users can use their own data or data we provided.
+>>>#5,` bulk_expression_data`  it should be a hdf5 format. users can use their own data or data we provided.
 
-#6, `sc_expression_data`  it should be a hdf5 format. users can use their own data or data we provided.
+>>>#6, `sc_expression_data`  it should be a hdf5 format. users can use their own data or data we provided.
 
-#7， `flag`, 0 means do not generate label list; 1 means to generate label list.
+>>>#7， `flag`, 0 means do not generate label list; 1 means to generate label list.
 #################OUTPUT
 
 It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf (NEPDF file), ydata_tf (label file) and zdata_tf (gene symbol pair file) for each data part divided.
 
 
-## 8.3 step3, use `train_with_labels_three_foldx.py` to train a new model with three-fold cross validation;
+>>## 8.3 step3, use `train_with_labels_three_foldx.py` to train a new model with three-fold cross validation;
 
-### Usage  python train_with_labels_three_foldx.py number_of_data_parts_divided NEPDF_pathway number_of_categories
+>>>### Usage  python train_with_labels_three_foldx.py number_of_data_parts_divided NEPDF_pathway number_of_categories
 
-### command line in author's linux machine :
+>>>### command line in author's linux machine :
 
     module load cuda-8.0 (it is to use GPU)
     srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_with_labels_three_foldx.py 9 /home/yey3/cnn_project/code3/NEPDF_data 3 > results.txt
@@ -171,11 +171,11 @@ It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf
 
 It will generate three cross_Validation folder whose name begins with 'YYYYY', in which 'keras_cnn_trained_model_shallow.h5' is the  trained model
 
-## 8.4 step4, use `train_with_labels_wholedatax.py` to train a new model with whole data;
+>>## 8.4 step4, use `train_with_labels_wholedatax.py` to train a new model with whole data;
 
-### Usage  python train_with_labels_wholedata.py number_of_separation NEPDF_data_path num_of_categories
+>>>### Usage  python train_with_labels_wholedata.py number_of_separation NEPDF_data_path num_of_categories
 
-### command line in author's linux machine :
+>>>### command line in author's linux machine :
 
     module load cuda-8.0 using GPU
     srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_with_labels_wholedatax.py 9 /home/yey3/cnn_project/code3/NEPDF_data 3 > results_whole.txt
@@ -184,16 +184,16 @@ It will generate three cross_Validation folder whose name begins with 'YYYYY', i
 
 It will generate a folder whose name begins with 'xwhole', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
 
-## 8.5 step5, use `predict_no_y.py` to do prediction; (the same to # step3 in trained_model)
+>>## 8.5 step5, use `predict_no_y.py` to do prediction; (the same to # step3 in trained_model)
 
-### Usage: python predict_no_y.py  number_of_separation NEPDF_data_pathway number_of_categories  model_pathway
+>>>### Usage: python predict_no_y.py  number_of_separation NEPDF_data_pathway number_of_categories  model_pathway
 
-### command line in author's linux machine :
+>>>### command line in author's linux machine :
 
     python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5(it is the newly trained model )
 
-# 9 Attentions:
+># 9 Attentions:
  
-## When label list is very large, say more than 100,000 gene pairs, we recommend users to feed a series of small  number_of_data_parts_divided to run the NEPDF generation in parallel.
-## We are exploring new tasks for CNNC, to be continued...
-# Enjoy our CNNC!!
+>>## When label list is very large, say more than 100,000 gene pairs, we recommend users to feed a series of small  number_of_data_parts_divided to run the NEPDF generation in parallel.
+>>## We are exploring new tasks for CNNC, to be continued...
+># Enjoy our CNNC!!
