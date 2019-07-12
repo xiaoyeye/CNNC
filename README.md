@@ -106,7 +106,7 @@ Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gen
 
 ### command line in author's linux machine :
 
-### python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/trained_model/models/KEGG_keras_cnn_trained_model_shallow2.h5
+    python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/trained_model/models/KEGG_keras_cnn_trained_model_shallow2.h5
 
 (In the models folder are  trained models for  KEGG and Reactome database respectively)
 
@@ -129,7 +129,7 @@ If users do not need to separate data, they can just generate a index list to di
 
 ### command line in author's linux machine :
 
-### python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_labelx_sy.txt mmukegg_new_new_unique_rand_labelx_num_sy.txt /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 1
+    python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_labelx_sy.txt mmukegg_new_new_unique_rand_labelx_num_sy.txt /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 1
 
 #################INPUT################################################################################################################################
 
@@ -161,9 +161,8 @@ It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf
 
 ### command line in author's linux machine :
 
-### module load cuda-8.0 (it is to use GPU)
-
-### srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_with_labels_three_foldx.py 9 /home/yey3/cnn_project/code3/NEPDF_data 3 > results.txt
+    module load cuda-8.0 (it is to use GPU)
+    srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_with_labels_three_foldx.py 9 /home/yey3/cnn_project/code3/NEPDF_data 3 > results.txt
 
 #######################OUTPUT
 
@@ -175,9 +174,8 @@ It will generate three cross_Validation folder whose name begins with 'YYYYY', i
 
 ### command line in author's linux machine :
 
-### module load cuda-8.0 using GPU
-
-### srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_with_labels_wholedatax.py 9 /home/yey3/cnn_project/code3/NEPDF_data 3 > results_whole.txt
+    module load cuda-8.0 using GPU
+    srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_with_labels_wholedatax.py 9 /home/yey3/cnn_project/code3/NEPDF_data 3 > results_whole.txt
 
 #######################OUTPUT
 
@@ -189,7 +187,7 @@ It will generate a folder whose name begins with 'xwhole', in which 'keras_cnn_t
 
 ### command line in author's linux machine :
 
-### python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5(it is the newly trained model )
+    python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5(it is the newly trained model )
 
 # 9 Attentions:
  
