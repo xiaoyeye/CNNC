@@ -64,7 +64,7 @@ Although not necessary, we strongly recommend GPU acceleration and conda managem
 such as `mmukegg_new_new_unique_rand_labelx_sy.txt` and `mmukegg_new_new_unique_rand_labelx.txt` in data folder.
 users also need to provide `data_separation index_list` which is a number list dividing gene_pair_list into small parts.
 
-Here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. We can evaluate CNNC's performance on only a small data part.
+Here we use `data separation index list` to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. We can evaluate CNNC's performance on only a small data part.
 If users do not want to specified separate data, they can just generate a index list to divide the data into N equal parts.
 ## 7.2 step2, use `get_xy_label_data_cnn_combine_from_database.py` to get gene pair NEPDF list;
 
