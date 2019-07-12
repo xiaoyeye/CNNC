@@ -51,7 +51,7 @@ Although not necessary, we strongly recommend GPU acceleration and conda managem
 
 >>## 5.2 Reactome Pathway prediction model
 
->>## 5.3 GTRD mESC TF prediction model
+>>## 5.3 GTRD bone TF prediction model
 
 ># 6, Train model for a new task
 
