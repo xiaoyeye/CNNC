@@ -5,7 +5,7 @@ Originally, CNNC is short for Convolutional neural network co-expression analysi
 ## date: 2019-07-07
 
 
-# 1, CNNC
+># 1, CNNC
 ![](https://raw.githubusercontent.com/xiaoyeye/CNNC/master/New%20Bitmap%20Image.bmp)
 
 CNNC aims to infer gene-gene relationships using single cell expression data. For
