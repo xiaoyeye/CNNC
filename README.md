@@ -59,9 +59,9 @@ Although not necessary, we strongly recommend GPU acceleration and conda managem
 
 
 
-# 7, Command lines for Trained model
+># 7, Command lines for Trained model
 
-## 7.1 step1, users need to provide gene pair candidate list;
+>>## 7.1 step1, users need to provide gene pair candidate list;
 
 `gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA GeneB ' or 'GeneA    GeneB     0'`
 such as `mmukegg_new_new_unique_rand_labelx_sy.txt` and `mmukegg_new_new_unique_rand_labelx.txt` in data folder.
@@ -69,33 +69,33 @@ users also need to provide `data_separation index_list` which is a number list d
 
 Here we use `data separation index list` to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. We can evaluate CNNC's performance on only a small data part.
 If users do not want to specified separate data, they can just generate a index list to divide the data into N equal parts.
-## 7.2 step2, use `get_xy_label_data_cnn_combine_from_database.py` to get gene pair NEPDF list;
+>>## 7.2 step2, use `get_xy_label_data_cnn_combine_from_database.py` to get gene pair NEPDF list;
 
-### Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation_index_list  bulk_expression_data  sc_exprsssion_data 0
+>>>### Usage: python get_xy_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt gene_pair_list  data_separation_index_list  bulk_expression_data  sc_exprsssion_data 0
 
-### command line in author's linux machine :
+>>>### command line in author's linux machine :
 
     python get_xy_label_data_cnn_combine_from_database.py bulk_gene_list.txt sc_gene_list.txt mmukegg_new_new_unique_rand_labelx_sy.txt mmukegg_new_new_unique_rand_labelx_num_sy.txt /home/yey3/sc_process_1/new_bulk_mouse/prs_calculation/mouse_bulk.h5 /home/yey3/sc_process_1/rank_total_gene_rpkm.h5 0
 
 #################INPUT################################################################################################################################
 
-#1, `bulk_gene_list.txt` is the list that converts bulk expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t bulk gene ID'`
+>>>#1, `bulk_gene_list.txt` is the list that converts bulk expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t bulk gene ID'`
 
-#2, `sc_gene_list.txt` is the list that converts sc expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t sc gene ID'`
+>>>#2, `sc_gene_list.txt` is the list that converts sc expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t sc gene ID'`
 
-#3, `gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA    GeneB'`
+>>>#3, `gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA    GeneB'`
 
-#4, `data_separation index_list` is a number list that divides gene_pair_list into small parts
+>>>#4, `data_separation index_list` is a number list that divides gene_pair_list into small parts
 
 #Here we use data separation index list to divide gene pairs into small data parts, and make sure that the gene pairs in each index inteval is completely isolated from others. And we can evaluate CNNC's performance on only a small data part.
 
 #if users do not need to separate data, they can just generate a index list to divide the data into N equal parts.
 
-#5, `bulk_expression_data`  it should be a hdf5 format. users can use their own data or data we provided.
+>>>#5, `bulk_expression_data`  it should be a hdf5 format. users can use their own data or data we provided.
 
-#6, `sc expression data`  it should be a hdf5 format. users can use their own data or data we provided.
+>>>#6, `sc expression data`  it should be a hdf5 format. users can use their own data or data we provided.
 
-#7， `flag`, 0 means do not generate label list; 1 means to generate label list.
+>>>#7， `flag`, 0 means do not generate label list; 1 means to generate label list.
 
 #################OUTPUT
 
