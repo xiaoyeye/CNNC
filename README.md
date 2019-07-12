@@ -18,23 +18,23 @@ example, for causality inference the output layer contains three probability nod
 where p0 represents the probability that genes a and b are not interacting, p1
 encodes the case that gene a regulates gene b, and p2 is the probability that gene b
 regulates gene a.
-# 2, Pipelines
+># 2, Pipelines
 ![](https://raw.githubusercontent.com/xiaoyeye/CNNC/master/pipeline.bmp)
 
 (a) Pipeline for TF-target, KEGG and Reactome edge predictions. Users only need to provide gene-pair candidate list. TF-tatget prediction is cell type specific. Here we provide the model for mESC TF prediction. Please use mESC expression data to generate mESC subset  and then do following NEPDF generation and classification of training and test, and use the big scRNA-seq and bulk data to do pathway tasks. (b) Pipeline for a new task with the expression data we collected. Users need to provide gene-pair candidate list to generate NEPDF list and label list to train and test model. (c) Pipeline for a new task with the expression data users collect. Users need to provide gene-pair candidate list, their own expression data to generate NEPDF list, and label list to train and test model. 
-# 3, Data sources
-## 3.1 scRNA-seq : 
+># 3, Data sources
+>>## 3.1 scRNA-seq : 
     https://s3.amazonaws.com/mousescexpression/rank_total_gene_rpkm.h5
 
-## 3.2 mESC scRNA-seq : 
+>>## 3.2 mESC scRNA-seq : 
     https://s3.amazonaws.com/mousescexpression/embryonic_stem_cell.h5
 
-## 3.3 bulk RNA-seq : 
+>>## 3.3 bulk RNA-seq : 
     https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.h5
 
-# 4, Code environment
+># 4, Code environment
 
-## Users need to install the latest python and all the modules required by the code.  
+>>## Users need to install the latest python and all the modules required by the code.  
 
 Author's environment is python 3.6.3 in a Linux server which is now running Centos 6.5
 as the underlying OS and Rocks 6.1.1 as the cluster management revision. 
@@ -45,17 +45,17 @@ Author's GPU is GeForce GTX 1080. If the latest theano does not work, please try
 
 Although not necessary, we strongly recommend GPU acceleration and conda management for package, dependency and environment to save time. With conda, the total software, package module installation time in Python should be less than one hour.
 
-# 5, Trained model for 
+># 5, Trained model for 
 (see folder for details)
-## 5.1 KEGG Pathway prediction model
+>>## 5.1 KEGG Pathway prediction model
 
-## 5.2 Reactome Pathway prediction model
+>>## 5.2 Reactome Pathway prediction model
 
-## 5.3 GTRD mESC TF prediction model
+>>## 5.3 GTRD mESC TF prediction model
 
-# 6, Train model for a new task
+># 6, Train model for a new task
 
-## Users can define their own tasks by providing new expression data and (or) new gene pair labels.
+>>## Users can define their own tasks by providing new expression data and (or) new gene pair labels.
 
 
 
