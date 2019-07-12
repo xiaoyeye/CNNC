@@ -101,7 +101,7 @@ If users do not want to specified separate data, they can just generate a index 
 
 It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf (NEPDF file)  and zdata_tf (gene symbol pair file) for each data part divided.
 
-Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gene sets. In our own data, scRNA-seq used entrez ID, bulk RNA-seq used ensembl ID, gene pair list used gene symbol ID, thus we used 'bulk_gene_list.txt' and 'sc_gene_list.txt' to convert all the IDs to gene symbols. Please also make IDs convert to gene symbol ID files for bulk and scRNA-seq data if users want to use their own expression data.
+Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gene sets. In our own data, scRNA-seq used entrez ID, bulk RNA-seq used ensembl ID, gene pair list used gene symbol ID, thus we used `bulk_gene_list.txt` and `sc_gene_list.txt` to convert all the IDs to gene symbols. Please also make IDs convert to gene symbol ID files for bulk and scRNA-seq data if users want to use their own expression data.
 
 >>## 7.3 step3, use `predict_no_y.py` to do prediction;
 
@@ -117,7 +117,7 @@ Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gen
 
 >>## 8.1 step1, users need to provide gene pair candidate list (the same to step1 in trained_model except the flag setting);
 
-`gene_pair_list is` the list that contains gene pairs and their labels. format : `'GeneA    GeneB     0'`
+`gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA    GeneB     0'`
 such as `mmukegg_new_new_unique_rand_labelx_sy.txt` and `mmukegg_new_new_unique_rand_labelx.txt` in data folder.
 users also need to provide data_separation index_list which is a number list dividing gene_pair_list into small parts
 
@@ -169,7 +169,7 @@ It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf
 
 #######################OUTPUT
 
-It will generate three cross_Validation folder whose name begins with 'YYYYY', in which 'keras_cnn_trained_model_shallow.h5' is the  trained model
+It will generate three cross_Validation folder whose name begins with 'YYYYY', in which `keras_cnn_trained_model_shallow.h5` is the  trained model
 
 >>## 8.4 step4, use `train_with_labels_wholedatax.py` to train a new model with whole data;
 
@@ -182,7 +182,7 @@ It will generate three cross_Validation folder whose name begins with 'YYYYY', i
 
 #######################OUTPUT
 
-It will generate a folder whose name begins with 'xwhole', in which 'keras_cnn_trained_model_shallow.h5' is the final trained model
+It will generate a folder whose name begins with 'xwhole', in which `keras_cnn_trained_model_shallow.h5` is the final trained model
 
 >>## 8.5 step5, use `predict_no_y.py` to do prediction; (the same to # step3 in trained_model)
 
