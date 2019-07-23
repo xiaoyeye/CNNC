@@ -99,9 +99,9 @@ If users do not want to specified separate data, they can just generate a index 
 
 #################OUTPUT
 
-It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf (NEPDF file)  and zdata_tf (gene symbol pair file) for each data part divided.
+It generates a NEPDF_data folder, and a series of data files containing `Nxdata_tf` (NEPDF file)  and `zdata_tf` (gene symbol pair file) for each data part divided.
 
-Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gene sets. In our own data, scRNA-seq used entrez ID, bulk RNA-seq used ensembl ID, gene pair list used gene symbol ID, thus we used `bulk_gene_list.txt` and `sc_gene_list.txt` to convert all the IDs to gene symbols. Please also make IDs convert to gene symbol ID files for bulk and scRNA-seq data if users want to use their own expression data.
+Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gene sets. In our own data, scRNA-seq used entrez ID, bulk RNA-seq used ensembl ID, gene pair list used gene symbol ID, thus we used `bulk_gene_list.txt` and `sc_gene_list.txt` to convert all the IDs to gene symbols. Please also do IDs convertion for bulk and scRNA-seq data if users want to use their own expression data.
 
 >>## 7.3 step3, use `predict_no_y.py` to do prediction;
 
@@ -155,7 +155,7 @@ If users do not need to separate data, they can just generate a index list to di
 >>>#7， `flag`, 0 means do not generate label list; 1 means to generate label list.
 #################OUTPUT
 
-It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf (NEPDF file), ydata_tf (label file) and zdata_tf (gene symbol pair file) for each data part divided.
+It generate a NEPDF_data folder, and a series of data files containing `Nxdata_tf` (NEPDF file), `ydata_tf` (label file) and `zdata_tf` (gene symbol pair file) for each data part divided.
 
 
 >>## 8.3 step3, use `train_with_labels_three_foldx.py` to train a new model with three-fold cross validation;
@@ -169,7 +169,7 @@ It generate a NEPDF_data folder, and a series of data files containing Nxdata_tf
 
 #######################OUTPUT
 
-It will generate three cross_Validation folder whose name begins with 'YYYYY', in which `keras_cnn_trained_model_shallow.h5` is the  trained model
+It generates three cross_Validation folder whose name begins with `YYYYY`, in which `keras_cnn_trained_model_shallow.h5` is the trained model
 
 >>## 8.4 step4, use `train_with_labels_wholedatax.py` to train a new model with whole data;
 
@@ -182,7 +182,7 @@ It will generate three cross_Validation folder whose name begins with 'YYYYY', i
 
 #######################OUTPUT
 
-It will generate a folder whose name begins with 'xwhole', in which `keras_cnn_trained_model_shallow.h5` is the final trained model
+It generates a folder whose name begins with `xwhole`, in which `keras_cnn_trained_model_shallow.h5` is the final trained model
 
 >>## 8.5 step5, use `predict_no_y.py` to do prediction; (the same to # step3 in trained_model)
 
@@ -190,7 +190,7 @@ It will generate a folder whose name begins with 'xwhole', in which `keras_cnn_t
 
 >>>### command line in author's linux machine :
 
-    python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5(it is the newly trained model )
+    python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow2.h5 (it is the newly trained model )
 
 ># 9 Attentions:
  
