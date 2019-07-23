@@ -195,7 +195,7 @@ It will generate a folder whose name begins with 'xwhole', in which `keras_cnn_t
 ># 9 Attentions:
  
 >>## When label list is very large, say more than 100,000 gene pairs, we recommend users to feed a series of small  number_of_data_parts_divided to run the NEPDF generation in parallel.
->>## We are exploring new tasks for CNNC, to be continued...
+>>## We are exploring new tasks and new datatypes for CNNC, to be continued...
 
 
 # Enjoy our CNNC!!
