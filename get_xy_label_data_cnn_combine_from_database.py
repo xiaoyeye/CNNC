@@ -121,14 +121,14 @@ for i in range(len(gene_pair_index)-1):   #### many sperations
         z.append(x_gene_name+'\t'+y_gene_name)
 
         if not sys.argv[1] == 'None':
-            x_tf_bulk = log10(rpkm_bulk[h_gene_list_bulk[x_gene_name]][0:249] + 10 ** -2)
+            x_tf_bulk = log10(rpkm_bulk[h_gene_list_bulk[x_gene_name]][0:249] + 10 ** -2)  ## 249 means the number of samples, users can just remove '[0:249]'
             x_gene_bulk = log10(rpkm_bulk[h_gene_list_bulk[y_gene_name]][0:249] + 10 ** -2)
             H_T_bulk = histogram2d(x_tf_bulk, x_gene_bulk, bins=32)
             H_bulk= H_T_bulk[0].T
             HT_bulk = (log10(H_bulk / 43261 + 10 ** -4) + 4)/4
         if not sys.argv[2] == 'None':
-            x_tf = log10(rpkm[int(h_gene_list[x_gene_name])][0:43261] + 10 ** -2) # for TF target prediction, remove "[0:43261]"
-            x_gene = log10(rpkm[int(h_gene_list[y_gene_name])][0:43261] + 10 ** -2)# for TF target prediction, remove "[0:43261]"
+            x_tf = log10(rpkm[int(h_gene_list[x_gene_name])][0:43261] + 10 ** -2) # ## 43261 means the number of samples in the sc data, we also have one row that is sum of all cells, so the real size is 43262, that is why we use [0:43261]. For TF target prediction, just remove "[0:43261]"
+            x_gene = log10(rpkm[int(h_gene_list[y_gene_name])][0:43261] + 10 ** -2)# For TF target prediction, remove "[0:43261]"
             H_T = histogram2d(x_tf, x_gene, bins=32)
             H = H_T[0].T
             HT = (log10(H / 43261 + 10 ** -4) + 4) / 4
