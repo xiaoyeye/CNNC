@@ -2,6 +2,8 @@
 # Title: Deep learning for inferring gene relationships from single-cell expression data
 Originally, CNNC is short for Convolutional neural network co-expression analysis. Co-expression is just one of the tasks CNNC can      do,   but the name (CNNC) derived from it looks very nice.
 
+## see `https://www.biorxiv.org/content/10.1101/365007v2` for details.
+
 ## date: 2019-07-07
 
 
