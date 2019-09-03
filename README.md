@@ -111,7 +111,7 @@ Here we use gene symbol information to align bulk, scRNA-seq and gene pair's gen
 
 >>>### command line in author's linux machine :
 
-    python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/trained_model/models/KEGG_keras_cnn_trained_model_shallow2.h5
+    python predict_no_y.py  9 /home/yey3/cnn_project/code3/NEPDF_data  3 /home/yey3/cnn_project/code3/trained_model/models/KEGG_keras_cnn_trained_model_shallow.h5
 
 (In the models folder are  trained models for  KEGG and Reactome database respectively)
 
