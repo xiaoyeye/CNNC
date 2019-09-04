@@ -22,9 +22,9 @@ from scipy import interp
 ####################################### parameter settings
 data_augmentation = False
 # num_predictions = 20
-batch_size = 1024 # mini batch for training
+batch_size = 32 # mini batch for training
 #num_classes = 3   #### categories of labels
-epochs = 200      #### iterations of trainning, with GPU 1080, each epoch takes about 60s
+epochs = 600      #### iterations of trainning, with GPU 1080, each epoch takes about 60s
 #length_TF =3057  # number of divide data parts
 # num_predictions = 20
 model_name = 'keras_cnn_trained_model_shallow.h5'
@@ -76,21 +76,21 @@ model.add(Activation('relu'))
 model.add(Conv2D(32, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Dropout(0.25))
+model.add(Dropout(0.5))
 
 model.add(Conv2D(64, (3, 3), padding='same'))
 model.add(Activation('relu'))
 model.add(Conv2D(64, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Dropout(0.25))
+model.add(Dropout(0.5))
 
 model.add(Conv2D(128, (3, 3), padding='same'))
 model.add(Activation('relu'))
 model.add(Conv2D(128, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Dropout(0.25))
+model.add(Dropout(0.5))
 
 model.add(Flatten())
 model.add(Dense(512))
@@ -106,10 +106,10 @@ elif num_classes == 2:
 else:
     model.add(Dense(num_classes))
     model.add(Activation('softmax'))
-    sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+    sgd = SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
     model.compile(optimizer=sgd, loss='categorical_crossentropy', metrics=['accuracy'])
 
-early_stopping = keras.callbacks.EarlyStopping(monitor='val_acc', patience=50, verbose=0, mode='auto')
+early_stopping = keras.callbacks.EarlyStopping(monitor='val_acc', patience=300, verbose=0, mode='auto')
 checkpoint1 = ModelCheckpoint(filepath=save_dir + '/weights.{epoch:02d}-{val_loss:.2f}.hdf5', monitor='val_loss',verbose=1, save_best_only=False, save_weights_only=False, mode='auto', period=1)
 checkpoint2 = ModelCheckpoint(filepath=save_dir + '/weights.hdf5', monitor='val_acc', verbose=1,save_best_only=True, mode='auto', period=1)
 callbacks_list = [checkpoint2, early_stopping]
