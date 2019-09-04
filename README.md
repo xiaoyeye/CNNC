@@ -196,6 +196,8 @@ It generates a folder whose name begins with `xwhole`, in which `keras_cnn_train
 
 ># 9 Attentions:
 >>## Please read the readme very carefully and make sure that all files have correct paths, since users may have different computer environments.
+>>## all command lines are just used for demo. If you want to run the real data, plz replace "mmukegg_new_new_unique_rand_labelx_num_sy.txt" with "mmukegg_new_new_unique_rand_labelx_num.txt", and replace all "9" with 3057, which is the real number of seperations.
+
 >>## When label list is very large, say more than 100,000 gene pairs, we recommend users to feed a series of small  number_of_data_parts_divided to run the NEPDF generation in parallel.
 >>## We are exploring new tasks and new datatypes for CNNC, to be continued...
 
