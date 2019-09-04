@@ -106,7 +106,7 @@ elif num_classes == 2:
 else:
     model.add(Dense(num_classes))
     model.add(Activation('softmax'))
-    sgd = SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
+    sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
     model.compile(optimizer=sgd, loss='categorical_crossentropy', metrics=['accuracy'])
 
 early_stopping = keras.callbacks.EarlyStopping(monitor='val_acc', patience=300, verbose=0, mode='auto')
