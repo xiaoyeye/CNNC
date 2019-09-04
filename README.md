@@ -192,7 +192,7 @@ It generates a folder whose name begins with `xwhole`, in which `keras_cnn_train
 
 >>>### command line in author's linux machine :
 
-    python predict_no_y.py  9 /home/yey3/pnas_github/CNNC-master/NEPDF_data  3 /home/yey/CNNC-master/train_new_model/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow.h5 (it is the newly trained model )
+    python predict_no_y.py  9 /home/yey/CNNC-master/NEPDF_data  3 /home/yey/CNNC-master/train_new_model/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow.h5 (it is the newly trained model )
 
 ># 9 Attentions:
 >>## Please read the readme very carefully and make sure that all files have correct paths, since users may have different computer environments.
