@@ -24,8 +24,7 @@ data_augmentation = False
 # num_predictions = 20
 batch_size = 1024 # mini batch for training
 #num_classes = 3   #### categories of labels
-epochs = 20     #### iterations of trainning, with GPU 1080, 200 for KEGG and Reactome, depends on specific tasks for GTRD, we actually selected
-#the best epochs and learning rate by a test on the first three TF in list
+epochs = 20     #### iterations of trainning, with GPU 1080, 600 for KEGG and Reactome, 200 for tasks for GTRD
 #length_TF =3057  # number of divide data parts
 # num_predictions = 20
 model_name = 'keras_cnn_trained_model_shallow.h5'
