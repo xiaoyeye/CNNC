@@ -63,7 +63,7 @@ Although not necessary, we strongly recommend GPU acceleration and conda managem
 
 ># 7, Command lines for Trained model
 
->>## 7.1 step1, users need to provide gene pair candidate list;
+>>## 7.1 step1, users need to provide gene pair list;
 
 `gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA GeneB ' or 'GeneA    GeneB     0'`
 such as `mmukegg_new_new_unique_rand_labelx_sy.txt` and `mmukegg_new_new_unique_rand_labelx.txt` in data folder.
