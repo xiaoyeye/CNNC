@@ -99,6 +99,7 @@ If users do not want to specified separate data, they can just generate a index 
 
 >>>#7， `flag`, 0 means do not generate label list; 1 means to generate label list.
 
+>>> If user does not have bulk (single cell) data, just put `None`s for `bulk_gene_list.txt` (`sc_gene_list.txt`) and `bulk_expression_data` (`sc expression data`).
 #################OUTPUT
 
 It generates a NEPDF_data folder, and a series of data files containing `Nxdata_tf` (NEPDF file)  and `zdata_tf` (gene symbol pair file) for each data part divided.
