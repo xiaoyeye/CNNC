@@ -61,14 +61,10 @@ data_path = sys.argv[2]
 num_classes = int(sys.argv[3])
 whole_data_TF = [i for i in range(length_TF)]
 ###################################################################################################################################
-for test_indel in range(1,4): ################## three fold cross validation    ## for KEGG and Reactiome 3 fold CV              #for KEGG and Reactiome 3 fold CV
+for test_indel in range(1,4): ################## three fold cross validation                                                     ## for  3 fold CV              
     test_TF = [i for i in range (int(np.ceil((test_indel-1)*0.333*length_TF)),int(np.ceil(test_indel*0.333*length_TF)))]         #
     train_TF = [i for i in whole_data_TF if i not in test_TF]                                                                    #
 ###################################################################################################################################
-#####################################################################
-# for test_indel in range (length_TF):                                      #  for GTRD leave-one-TF-out CV
-    # test_TF = [test_indel]                                          #
-    # train_TF = [i for i in whole_data_TF if i not in test_TF]       #
 #####################################################################
     (x_train, y_train,count_set_train) = load_data_TF2(train_TF,data_path)
     (x_test, y_test,count_set) = load_data_TF2(test_TF,data_path)
