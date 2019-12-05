@@ -33,7 +33,10 @@ regulates gene a.
 
 >>## 3.3 bulk RNA-seq : 
     https://s3.us-east-2.amazonaws.com/mousebulkexprssion/mouse_bulk.h5
-
+>>## 3.4 mesc single cell RNA-seq:
+    https://mousescexpression.s3.amazonaws.com/mesc_cell.h5
+>>## 3.5 dendritic single cell RNA-seq:
+    https://mousescexpression.s3.amazonaws.com/dendritic_cell.h5
 ># 4, Code environment
 
 >>## Users need to install the latest python and all the modules required by the code.  
