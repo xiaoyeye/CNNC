@@ -83,7 +83,7 @@ If users do not want to specified separate data, they can just generate a index 
 
 >>>#1, `bulk_gene_list.txt` is the list that converts bulk expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t bulk gene ID'`
 
->>>#2, `sc_gene_list.txt` is the list that converts sc expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t sc gene ID'`
+>>>#2, `sc_gene_list.txt` is the list that converts sc expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t sc gene ID'`. `please notice that mesc singele cell data is not from the big 40k data, so we proivde a new sc_gene_list.txt file for it`.
 
 >>>#3, `gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA    GeneB'`
 
