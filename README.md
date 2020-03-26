@@ -84,10 +84,10 @@ If users do not want to specified separate data, they can just generate a index 
 
 #################INPUT################################################################################################################################
 
->>>#1, `bulk_gene_list.txt` is the list that converts bulk expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t bulk gene ID'`
+>>>#1, `bulk_gene_list.txt` is the list that converts bulk expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t bulk gene ID'`. Set as `None` if you do not have it.
 
 >>>#2, `sc_gene_list.txt` is the list that converts sc expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t sc gene ID'`. `please notice that mesc single cell data is not from the big 40k data, so we proivde a new sc_gene_list.txt file for it`.
-
+. Set as `None` if you do not have it.
 >>>#3, `gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA    GeneB'`
 
 >>>#4, `data_separation index_list` is a number list that divides gene_pair_list into small parts
@@ -96,9 +96,9 @@ If users do not want to specified separate data, they can just generate a index 
 
 #if users do not need to separate data, they can just generate a index list to divide the data into N equal parts.
 
->>>#5, `bulk_expression_data`  it should be a hdf5 format. users can use their own data or data we provided.
+>>>#5, `bulk_expression_data`  it should be a hdf5 format. users can use their own data or data we provided. Set as `None` if you do not have it.
 
->>>#6, `sc expression data`  it should be a hdf5 format. users can use their own data or data we provided.
+>>>#6, `sc expression data`  it should be a hdf5 format. users can use their own data or data we provided. Set as `None` if you do not have it.
 
 >>>#7， `flag`, 0 means do not generate label list; 1 means to generate label list.
 
@@ -143,9 +143,9 @@ If users do not need to separate data, they can just generate a index list to di
 
 #################INPUT################################################################################################################################
 
->>>#1, `bulk_gene_list.txt` is the list that converts bulk expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t bulk gene ID'`
+>>>#1, `bulk_gene_list.txt` is the list that converts bulk expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t bulk gene ID'`. Set as `None` if you do not have it.
 
->>>#2, `sc_gene_list.txt` is the list that converts sc expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t sc gene ID'`
+>>>#2, `sc_gene_list.txt` is the list that converts sc expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t sc gene ID'`. Set as `None` if you do not have it.
 
 >>>#3, `gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA    GeneB     0'`
 
@@ -155,9 +155,9 @@ If users do not need to separate data, they can just generate a index list to di
 
 #if users do not want to separate data, they can just generate a index list to divide the data into N equal parts.
 
->>>#5,` bulk_expression_data`  it should be a hdf5 format. users can use their own data or data we provided.
+>>>#5,` bulk_expression_data`  it should be a hdf5 format. users can use their own data or data we provided. Set as `None` if you do not have it.
 
->>>#6, `sc_expression_data`  it should be a hdf5 format. users can use their own data or data we provided.
+>>>#6, `sc_expression_data`  it should be a hdf5 format. users can use their own data or data we provided. Set as `None` if you do not have it.
 
 >>>#7， `flag`, 0 means do not generate label list; 1 means to generate label list.
 #################OUTPUT
