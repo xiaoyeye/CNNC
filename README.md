@@ -88,6 +88,7 @@ If users do not want to specified separate data, they can just generate a index 
 
 >>>#2, `sc_gene_list.txt` is the list that converts sc expression data gene set into gene symbol IDs. Format: `'gene symbol IDs\t sc gene ID'`. `please notice that mesc single cell data is not from the big 40k data, so we proivde a new sc_gene_list.txt file for it`.
 . Set as `None` if you do not have it.
+
 >>>#3, `gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA    GeneB'`
 
 >>>#4, `data_separation index_list` is a number list that divides gene_pair_list into small parts
