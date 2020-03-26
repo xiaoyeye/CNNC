@@ -161,6 +161,8 @@ If users do not need to separate data, they can just generate a index list to di
 >>>#6, `sc_expression_data`  it should be a hdf5 format. users can use their own data or data we provided. Set as `None` if you do not have it.
 
 >>>#7， `flag`, 0 means do not generate label list; 1 means to generate label list.
+
+>>> If user does not have bulk (single cell) data, just put `None`s for `bulk_gene_list.txt` (`sc_gene_list.txt`) and `bulk_expression_data` (`sc expression data`).
 #################OUTPUT
 
 It generate a NEPDF_data folder, and a series of data files containing `Nxdata_tf` (NEPDF file), `ydata_tf` (label file) and `zdata_tf` (gene symbol pair file) for each data part divided.
