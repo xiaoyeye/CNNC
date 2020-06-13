@@ -181,26 +181,6 @@ It generate a NEPDF_data folder, and a series of data files containing `Nxdata_t
 
 It generates three cross_Validation folder whose name begins with `YYYYY`, in which `keras_cnn_trained_model_shallow.h5` is the trained model
 
->>## 8.4 step4, use `train_with_labels_wholedatax.py` to train a new model with whole data;
-
->>>### Usage  python train_with_labels_wholedata.py number_of_separation NEPDF_data_path num_of_categories
-
->>>### command line in author's linux machine :
-
-    module load cuda-8.0 using GPU
-    srun -p gpu --gres=gpu:1 -c 2 --mem=20Gb python train_with_labels_wholedatax.py 9 /home/yey/CNNC-master/NEPDF_data 3 > results_whole.txt
-
-#######################OUTPUT
-
-It generates a folder whose name begins with `xwhole`, in which `keras_cnn_trained_model_shallow.h5` is the final trained model
-
->>## 8.5 step5, use `predict_no_y.py` to do prediction; (the same to # step3 in trained_model)
-
->>>### Usage: python predict_no_y.py  number_of_separation NEPDF_data_pathway number_of_categories  model_pathway
-
->>>### command line in author's linux machine :
-
-    python predict_no_y.py  9 /home/yey/CNNC-master/NEPDF_data  3 /home/yey/CNNC-master/train_new_model/xwhole_saved_models_T_32-32-64-64-128-128-512_e200/keras_cnn_trained_model_shallow.h5 (it is the newly trained model )
 
 ># 9 Attentions:
 >>## Please read the readme very carefully and make sure that all files have correct paths, since users may have different computer environments.
